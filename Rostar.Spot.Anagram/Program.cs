@@ -17,6 +17,7 @@ namespace Rostar.Spot.Anagram
             {
                 Console.WriteLine(str);
             }
+
             Console.ReadLine();
         }
     }
