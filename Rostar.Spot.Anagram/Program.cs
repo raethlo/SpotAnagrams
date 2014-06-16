@@ -26,12 +26,13 @@ namespace Rostar.Spot.Anagram
     {
         public static bool HasAnagram(this string str,string anag)
         {
-            if(str.Length != anag.Length)
+            if(str.Length != anag.Length || string.IsNullOrWhiteSpace(anag))
                 return false;
 
-            string res = new string(str.Except(anag).ToArray());
+            var s = new string(str.ToLower().OrderBy(c => (byte)c).ToArray());
+            var a = new string(anag.ToLower().OrderBy(c => (byte)c).ToArray());
 
-            return string.IsNullOrEmpty(res);
+            return s.Equals(a);
         }
 
         public static List<string> ChooseAnagrams(this string str, List<string> words)
