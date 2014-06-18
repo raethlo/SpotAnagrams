@@ -13,6 +13,14 @@ Nakresli a vysvetli dátový model (tabuľky, prepojenia a stĺpce) pre takýto 
 ![](https://dl.dropboxusercontent.com/u/55261792/spot_uloha2.png)
 --
 ###Popis
-- Product - cena je reprezerntovaná samostatnou entitou, ktora ma atribúty začiatku a konca obdobia, kedy cena platí, čo môže byť užitočné pri analýze cien
-- Cart - keď používateľ nakupuje v našom e-shope, priebežne si ukladá vybrané produkty do košíka, môže si zvoliť množstvo každého produktu, to je zabezpečené väzobnou entitou CartItem, ktorá rozkladá many-to.many reláciu medzi produktom a košíkom
-- 
+* Product - cena je reprezerntovaná samostatnou entitou, ktora ma atribúty začiatku a konca obdobia, kedy cena platí, čo môže byť užitočné pri analýze cien
+* Cart - keď používateľ nakupuje v našom e-shope, priebežne si ukladá vybrané produkty do košíka 
+    * môže si zvoliť množstvo každého produktu, to je zabezpečené väzobnou entitou CartItem, ktorá rozkladá many-to.many          reláciu medzi produktom a košíkom
+* DiscountCode - reprezentuje zlavovy kupon
+    * má vymedzenýn čas platnosti (date_starts, date_ends)
+    * má vymedzený počet použití
+    * je identifikovaný reťazcom (Code => napr. SALE2014)
+    * mohol by sa k nej viazať aj customer
+* Order - konkrétna už uskutočnená objednávka v e-shope
+    * má stav (uskutočne) 
+* Customer - aj ked je v e-shope dôležitá len e-mailová adresa, tak modelujem zákazníka zvlášť, čo uľahčí prácu, ak budeme chcieť túto entitu v budúcnosti rozšíriť
