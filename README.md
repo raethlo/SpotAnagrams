@@ -13,7 +13,7 @@ Túto úlohu som riešil v jazyku C# a jednotlivé metódy som implementoval ako
 Trik v riešení anagramov je v tom, že písmena anagramov abecedne zoradíme, tak dostaneme rovnaké reťazce.
 Riešenie tejto úlohy som spočiatku ale riešil trochu inak.
 
-Na branchi master sa nachádza moje prvotné riešenie. Použil som v ňom LINQ metódu Except. Myšlienka je taká, že ak spravím rozdiel množín (polí dvoch slov), a dostanem prázdnu množinu (string), tak sa jedná o anagramy. Jediná optimalizácia je, že ak sú stringy rôzne, tak porovnávanie rovno vráti false. Metóda Except by mala zbehnúť v O(n), keďže rozdiel robí sekvenčným prechádzaním oboch zoznamov.
+Na branchi master sa nachádza moje prvotné riešenie. Použil som v ňom LINQ metódu Except. Myšlienka je taká, že ak spravím rozdiel množín (polí dvoch slov) a dostanem prázdnu množinu (string), tak sa jedná o anagramy. Jediná optimalizácia je, že ak sú stringy rôzne, tak porovnávanie rovno vráti false. Metóda Except by mala zbehnúť v O(n), keďže rozdiel robí sekvenčným prechádzaním oboch zoznamov.
 
 Druhý spôsob, na branchi second_try, stringy zoradí a potom ich provná => O(n * log n), kvoli zoradeniu.
 
