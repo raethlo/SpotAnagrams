@@ -36,9 +36,9 @@ namespace Rostar.Spot.Anagram
             if(str.Length != anag.Length)
                 return false;
 
-            //mnozinova operacia cez LINQ
-            //ak spravim rozdiel mnozin a ostane mi "prazdna mnozina",
-            //(string) boli to anagramy
+            //set operation with LINQ
+            //when the diff between two sets results in an empty set(strig),
+            //given strigs where anagrams
             string res = new string(str.Except(anag).ToArray());
 
             return string.IsNullOrEmpty(res);
