@@ -41,9 +41,9 @@ namespace Rostar.Spot.Anagram
             }
 
             foreach (var key in occur1.Keys)
-                if (occur1[key] != occur2[key])
+                if (occur1[key] != occur2[key])     //ak sa niektore vyskyty nezhoduju, nie su to anagramy
                     return false;
-
+            //ak sa vsetko zhodovalo, tak to anagramy su
             return true;
         }
 
