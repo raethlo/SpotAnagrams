@@ -28,10 +28,23 @@ namespace Rostar.Spot.Anagram
         {
             if(str.Length != anag.Length)
                 return false;
+            
+            //vyskyty pismen v slovach
+            Dictionary<char, int> occur1 = new Dictionary<char, int>();
+            Dictionary<char, int> occur2 = new Dictionary<char, int>();
 
-            string res = new string(str.Except(anag).ToArray());
+            //mozeme ist do str.Len lebo oba stringy su rovnakej dlzky
+            for (int i = 0; i < str.Length; i++)
+            {
+                ++occur1[str[i]];
+                ++occur2[anag[i]];
+            }
 
-            return string.IsNullOrEmpty(res);
+            foreach (var key in occur1.Keys)
+                if (occur1[key] != occur2[key])
+                    return false;
+
+            return true;
         }
 
         public static List<string> ChooseAnagrams(this string str, List<string> words)
